@@ -28,7 +28,7 @@ class SynonymMapper(object):
         ix = 0
         while ix < size:
             if debug:
-                print "ix", ix
+                print ("ix", ix )
             best, best_key = None, None
             tmp_ix = ix
             max_ix = ix
@@ -154,12 +154,12 @@ def analyze(s, filters):
 def debug_analyze(s, filters):
     temp = s
     pad = 20
-    print "START".ljust(pad), temp
+    print ("START".ljust(pad), temp) 
     for f in filters:
         temp = f(temp)
         if type(temp) == list:
             s_temp = "|".join(map(str,temp))
         else:
             s_temp = str(temp)
-        print f.func_name.ljust(pad), s_temp
+        print (f.func_name.ljust(pad), s_temp)
     return temp
